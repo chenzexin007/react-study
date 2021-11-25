@@ -7,8 +7,10 @@ import React from 'react'
 // import KeyComponent from './KeyComponent'
 // import FormDemo01 from './FormDemo01'
 // import RefDemo from './RefDemo'
-import RefsForm from './RefsForm'
-
+// import RefsForm from './RefsForm'
+// import Parent from './components/Parent'
+// import Compose from './Compose'
+import PropTypeDemo from './PropTypeDemo'
 class App extends React.Component{
 
   constructor(props){
@@ -40,7 +42,12 @@ class App extends React.Component{
         {/* <KeyComponent/> */}
         {/* <FormDemo01/> */}
         {/* <RefDemo/> */}
-        <RefsForm/>
+        {/* <RefsForm/> */}
+        {/* <Parent/> */}
+        {/* <Compose>
+          <div>我是children</div>
+        </Compose> */}
+        <PropTypeDemo/>
       </div>
     )
   }

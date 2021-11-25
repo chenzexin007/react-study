@@ -55,3 +55,12 @@ ReactDOM.render(<App/>, document.getElementById('root'))
 //   前置知识： refs & Dom    RefDemo
 // RefsForm
 
+// demo08 状态提升
+// components文件夹   组件间的数据交互
+
+// demo09 组合 VS 继承
+// Compose  组合， 继承这里没有写例子
+
+// demo09  PropType 校验
+// PropTypeDemo
+
