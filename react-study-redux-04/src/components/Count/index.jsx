@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import Store from "../../redux/store"
-import { createInNumberAction, createUnNumberAction, createInNumberAsyncAction } from '../../redux/count_action'
+// import Store from "../../redux/store"
+// import { createInNumberAction, createUnNumberAction, createInNumberAsyncAction } from '../../redux/count_action'
 
 export default class Count extends Component {
   constructor(props){
     super(props)
+    console.log(this.props)
   }
 
   inNumber = () => {
@@ -12,7 +13,8 @@ export default class Count extends Component {
     //   all: this.state.all + Number(this.selectNumber.value)
     // })
     // Store.dispatch({ type: "inNumber", data: this.selectNumber.value*1 })
-    Store.dispatch(createInNumberAction(this.selectNumber.value*1))
+    // Store.dispatch(createInNumberAction(this.selectNumber.value*1))
+    this.props.jia(this.selectNumber.value*1)
   }
 
   unNumber = () => {
@@ -20,16 +22,18 @@ export default class Count extends Component {
     //   all: this.state.all - Number(this.selectNumber.value)
     // })
     // Store.dispatch({ type: "unNumber", data: this.selectNumber.value*1 })
-    Store.dispatch(createUnNumberAction(this.selectNumber.value*1))
+    // Store.dispatch(createUnNumberAction(this.selectNumber.value*1))
+    this.props.jian(this.selectNumber.value*1)
   }
 
   jishuNumber = () => {
     const value = Number(this.selectNumber.value)
-    if(this.state.all % 2 !== 0){
-      this.setState({
-        all: this.state.all + value
-      })
+    // const state = Store.getState()
+    if(this.props.count % 2 !== 0){
+      this.props.jia(value*1)
+      // Store.dispatch(createInNumberAction(value*1))
     }
+    
   }
 
   yibuNumber = () => {
@@ -38,13 +42,14 @@ export default class Count extends Component {
     //     all: this.state.all + Number(this.selectNumber.value)
     //   })      
     // })
-    Store.dispatch(createInNumberAsyncAction(this.selectNumber.value*1, 500))
+    // Store.dispatch(createInNumberAsyncAction(this.selectNumber.value*1, 500))
+    this.props.jiaAsync(this.selectNumber.value*1, 500)
   }
 
   render() {
     return (
       <div>
-        <h2>总数: {Store.getState()}</h2>
+        <h2>总数: {this.props.count}</h2>
         <select ref={ c => this.selectNumber = c }>
           <option value="1">1</option>
           <option value="2">2</option>

@@ -1,4 +1,4 @@
-import { INNUMBER, UNNUMBER } from "./constant"
+import { INNUMBER, UNNUMBER } from "../constant"
 const initState = 0
 export default function countRedux(preState=initState, actions){
   console.log(preState, actions)

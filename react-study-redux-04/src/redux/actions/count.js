@@ -1,4 +1,4 @@
-import { INNUMBER, UNNUMBER } from "./constant"
+import { INNUMBER, UNNUMBER } from "../constant"
 // import Store from "./store"
 // 同步action 返回值时 {}
 export const createInNumberAction = data => ({ type:INNUMBER, data  })
