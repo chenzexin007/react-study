@@ -30,7 +30,7 @@ import React, { Component } from 'react'
 /**
  * 
  * 使用Hook： 因为纯函数是没有this的， 不能使用state，声明周期这些
- *  例如： useState、 useEffect这些
+ *  例如： useState、 useEffect、 useRef()这些
  */
 // 函数式编程
 export default function StateHook(){
@@ -38,7 +38,7 @@ export default function StateHook(){
   // 参数1： state； 参数2： updateState 函数
   const [count, setCount] = React.useState(0)
   const [name, setName] = React.useState("lilei")
-
+  const countRef = React.useRef()
   /**
    * 使用React.useEffect可以利用两个生命周期函数
    * 1. 第二个参数不传时， 代表监测所有的state的改变，相当 componentDidUpdate
@@ -64,6 +64,10 @@ export default function StateHook(){
     // setName(name => name="zhangsan")
   }
 
+  function alertInput(){
+    alert(countRef.current.value)
+  }
+
   return (
     <div>
       <div>
@@ -73,7 +77,9 @@ export default function StateHook(){
       <div>
         name: {name}
         <button onClick={toChangeName}>changeName</button>
-      </div>     
+      </div> 
+      <input type="text" ref={countRef} />  
+      <button onClick={alertInput}>点击alert  input</button>  
     </div>      
   )
 }
