@@ -40,4 +40,23 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script>
+    function recalc() {
+
+      let htmlwidth=document.documentElement.clientWidth || document.body.clientWidth;//有些浏览器documentElement获取不到,那就使用后面的body
+    console.log(htmlwidth);
+    
+    // 2.htmlDom
+    let htmlDom=document.getElementsByTagName("html")[0]
+    console.log(htmlDom);
+
+    //3.设置根元素样式
+    htmlDom.style.fontSize=htmlwidth/20+'px';//记住这个20是等份的意思,这样每一份是16px,即1rem=16px;
+
+    }
+
+    window.addEventListener("resize", recalc, false);
+
+    document.addEventListener('DOMContentLoaded', recalc, false);
+  </script>
 </html>
