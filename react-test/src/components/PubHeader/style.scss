@@ -1,0 +1,12 @@
+.PubHeader{
+  height: 50px;
+  background-color: rgba(255,102,85,1);
+  line-height: 50px;
+  color:white;
+  text-align: center;
+  position: relative;
+  .return{
+    position: absolute;
+    left:0;
+  }
+}

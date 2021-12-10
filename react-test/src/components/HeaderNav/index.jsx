@@ -1,12 +1,17 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import "./style.scss"
+import { useSelector } from "react-redux"
 
 const HeaderNav = () => {
+  const city = useSelector(state => state.city)
   return (
     <div id="home-header">
       <div className="home-header-left">
-        <span>北京</span>
-        <i className="iconfont icon-yonghu-yuan"></i>
+        <Link to="/City">
+          <span>{city.title}</span>
+          <i className="iconfont icon-yonghu-yuan"></i>
+        </Link>
       </div>
       <div className="home-header-middle">
         <div className="search-container">

@@ -1,0 +1,15 @@
+.ChoiceCity{
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  flex-wrap: wrap;
+  .city-item{
+    width: 20%;
+    height: 2rem;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+    color: gray;
+    font-size: 16px;
+    border: 1px solid gray;
+  }
+}
