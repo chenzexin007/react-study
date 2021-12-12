@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import SearchInput from "../SearchInput"
 import "./style.scss"
 import { useSelector } from "react-redux"
 
@@ -16,7 +17,8 @@ const HeaderNav = () => {
       <div className="home-header-middle">
         <div className="search-container">
         <i className="iconfont icon-yonghu-yuan"></i>
-        <input type="text" />
+        {/* <input type="text" /> */}
+        <SearchInput/>
         </div>
       </div>
       <div className="home-header-right">

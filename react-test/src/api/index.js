@@ -8,6 +8,7 @@ const base = {
     cityUrl:"/api/aj/getcitycode",
     homehot1:"/api/home/hot1",
     homehot2:"/api/home/hot2",
+    searchUrl: "/api/search"
 }
 
 
@@ -33,6 +34,12 @@ const api = {
      */
     getCityLists(){
         return axios.get(base.cityUrl)
+    },
+    /**
+     * 搜索页数据
+     */
+    getSearchData(params){
+      return axios.get(base.baseUrl + base.searchUrl, { params })
     }
 }
 

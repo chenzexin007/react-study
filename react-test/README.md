@@ -80,3 +80,19 @@
      ```js
      npm i react-city-select
      ```
+## 创建搜索页
+1. 创建搜索页面，配置路由
+    - 抽离搜索的input
+    - 配置路由
+    - 监听keyCode进行enter跳转
+    - 路由跳转携带参数
+        Hook实现方式， react-router-dom提供的 useParams
+2. 实现搜索网络请求接口
+    - 后台由于数据问题，每次搜索返回相同的测试内容
+3. 前台访问接口，获取数据
+4. 关于列表数据渲染的注意项
+    - 之前都是直接获取数据然后渲染，以后都需要单独抽离item 然后for 去逐个渲染
+    - 渲染HTML结构
+    ```html
+      <p dangerouslySetInnerHTML={{ __html:data.price + "元/月" }}></p>
+    ```

@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const homehot = require("./data/home/homehot")
+const searchData = require("./data/search")
 const url = require("url")
 
 /**
@@ -25,5 +26,15 @@ router.get("/home/hot2",(req,res) =>{
     })
 })
 
+/**
+ * 搜索页数据
+ */
+router.get("/search", (req,res) => {
+  const searchKey = url.parse(req.url, true).query.searchKey
+  res.send({
+    status: 200,
+    result: searchData
+  })
+})
 
 module.exports = router;
