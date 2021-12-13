@@ -20,7 +20,7 @@ const HomeHotList = (props) =>{
                 setCity(res.data.city)
             }
         })
-    },[])
+    },[]) // eslint-disable-line react-hooks/exhaustive-deps
 
     /**
      * 获取hot2
@@ -34,7 +34,7 @@ const HomeHotList = (props) =>{
                 setCity(res.data.city)
             }
         })
-    },[])
+    },[]) // eslint-disable-line react-hooks/exhaustive-deps
 
     return(
         <div>

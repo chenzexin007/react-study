@@ -24,7 +24,7 @@ const LoadMore = (props) => {
         }
       }
     })
-  }, [loadTop])
+  }, [loadTop]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div ref={more} className="loading">加载更多...</div>

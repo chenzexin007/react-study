@@ -9,7 +9,7 @@ const SearchList = (props) => {
 
   useEffect(() => {
     httpToGetData()
-  }, [props.searchKey])
+  }, [props.searchKey]) // eslint-disable-line react-hooks/exhaustive-deps
 
   function httpToGetData(){
     api.getSearchData({ searchKey: props.searchKey }).then(res => {

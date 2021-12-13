@@ -5,6 +5,7 @@ import LiveService from "../pages/Main/LiveService"
 import Shop from "../pages/Main/Shop"
 import User from "../pages/Main/User"
 import City from '../pages/City'
+import Detail from '../pages/Detail'
 import SearchPage from '../pages/Search'
 import BottomNav from '../components/BottomNav'
 import Layout from '../pages/Main/Layout'
@@ -14,6 +15,7 @@ const AppRouter = () => {
     <Router>
       <Switch>
         <Route path="/City" component={City}></Route>
+        <Route path="/detail/:id" component={Detail}></Route>
         <Route path="/search/:keywords" component={SearchPage}></Route>
         <Layout>
           <Switch>

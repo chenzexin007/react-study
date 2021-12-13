@@ -12,12 +12,13 @@ const SearchInput = (props) => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    console.log(params.keywords, reduxSearchKey)
     if(params.keywords){
       dispatch(updateSearchKey(params.keywords))
+    }else {
+      dispatch(updateSearchKey(""))
     }
     setsearchKey(reduxSearchKey)
-  }, [reduxSearchKey, params.keywords])
+  }, [reduxSearchKey, params.keywords]) // eslint-disable-line react-hooks/exhaustive-deps
 
   function changeSearch(e){
     setsearchKey(e.target.value)
